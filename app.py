@@ -9,9 +9,10 @@ quotes = pd.read_csv('quotes.csv')
 def display_quote():
     return random.choice(quotes['text'].tolist())
 
-# إنشاء واجهة Gradio
+# إنشاء واجهة Gradio مع تحديد المدخلات والمخرجات
 interface = gr.Interface(
     fn=display_quote, 
+    inputs=None,  # لا توجد مدخلات
     outputs='text', 
     title='Quote Generator', 
     description='Click the button to generate a random quote!'
